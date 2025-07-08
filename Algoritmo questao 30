@@ -1,0 +1,35 @@
+#pragma once
+#include <iostream>
+
+inline void exibeDobro(int valor) {
+    std::cout << "Dobro (por valor): " << valor * 2 << std::endl;
+}
+
+inline void incrementa(int& numero) {
+    numero++;
+}
+
+inline void trocar(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+#include <iostream>
+#include "funcoes.h"
+
+int main() {
+    int x = 5;
+    int y = 10;
+
+    exibeDobro(x);
+    std::cout << "Valor original de x: " << x << std::endl;
+
+    incrementa(x);
+    std::cout << "Valor de x após incremento (referência): " << x << std::endl;
+
+    std::cout << "Antes da troca - x: " << x << ", y: " << y << std::endl;
+    trocar(&x, &y);
+    std::cout << "Depois da troca - x: " << x << ", y: " << y << std::endl;
+
+    return 0;
+}
